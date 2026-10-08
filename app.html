@@ -1,0 +1,27 @@
+<div class="container">
+
+  <div class="d-flex justify-content-between align-items-center mb-3">
+
+    <h2>Gestion des produits</h2>
+
+    <a href="javascript:void(0)" (click)="afficher()">
+      Ajouter
+    </a>
+
+  </div>
+
+  @if (!afficherFormulaire) {
+
+    <app-produitts></app-produitts>
+
+    <br>
+
+    <app-produitts></app-produitts>
+
+  } @else {
+
+    <app-add-produit></app-add-produit>
+
+  }
+
+</div>

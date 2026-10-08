@@ -1,0 +1,47 @@
+<div class="container">
+
+  @if (produit.length != 0) {
+
+    <table class="table">
+
+      <tr>
+        <th>Numéro</th>
+        <th>ID</th>
+        <th>Nom</th>
+        <th>Prix</th>
+        <th>Date</th>
+        <th>Actions</th>
+      </tr>
+
+      @for (p of produit; track p.idproduit; let index = $index) {
+
+        <tr>
+          <td>{{ index + 1 }}</td>
+          <td>{{ p.idproduit }}</td>
+          <td>{{ p.nomproduit }}</td>
+          <td>{{ p.prixproduit }}</td>
+          <td>{{ p.datecreation | date:'dd/MM/yyyy' }}</td>
+
+          <td>
+            <button
+              type="button"
+              class="supprimer"
+              (click)="supprimerproduit(p)">
+              Supprimer
+            </button>
+          </td>
+        </tr>
+
+      }
+
+    </table>
+
+    Nombre : {{ produit.length }}
+
+  } @else {
+
+    <h1>Aucun produit trouvé !</h1>
+
+  }
+
+</div>
